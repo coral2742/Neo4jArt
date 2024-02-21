@@ -9,7 +9,7 @@
     - [Consultas](#consultas)
     - [Configuración](#configuración)
     - [Documentación en GraphGist](#documentación-en-graphgist)
-    - [Info](#info)
+  - [Info](#info)
 
 ![Neo4jArt](imgs/Neo4jArt.gif)
 
@@ -119,7 +119,7 @@ Se proporciona una documentación en formato GraphGist:
 [Neo4jArt en GraphGist](https://portal.graphgist.org/graph_gists/5599009c-169c-430d-917e-12d51fabc261)
 
 
-### Info
+## Info
 -	https://culturacolectiva.com
 -	https://www.eluniversal.com.mx
 -	https://www.wikiart.org
