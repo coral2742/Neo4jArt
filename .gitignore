@@ -224,3 +224,6 @@ README.html
 *.iml
 .idea
 .exercism
+
+# Credentials file
+Credentials.*
