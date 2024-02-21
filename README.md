@@ -8,7 +8,7 @@
     - [Consultas](#consultas)
     - [Documentación en GraphGist](#documentación-en-graphgist)
 
-![Neo4jArt](imgs/Neo4jArt-video.gif)
+![Neo4jArt](imgs/Neo4jArt.gif)
 
 ## English
 
