@@ -1,0 +1,124 @@
+
+// Pintores
+
+CREATE (vanGogh:Pintor {nombre: 'Vincent van Gogh', nacimiento: 1853, muerte: 1890, nacionalidad: 'neerlandesa', genero: 'masculino'})
+CREATE (picasso:Pintor {nombre: 'Pablo Picasso', nacimiento: 1881, muerte: 1973, nacionalidad: 'española', genero: 'masculino'})
+CREATE (daVinci:Pintor {nombre: 'Leonardo da Vinci', nacimiento: 1452, muerte: 1519, nacionalidad: 'italiana', genero: 'masculino'})
+CREATE (michelangelo:Pintor {nombre: 'Michelangelo Buonarroti', nacimiento: 1475, muerte: 1564, nacionalidad: 'italiana', genero: 'masculino'})
+CREATE (velazquez:Pintor {nombre: 'Diego Velázquez', nacimiento: 1599, muerte: 1660, nacionalidad: 'española', genero: 'masculino'})
+CREATE (dali:Pintor {nombre: 'Salvador Dalí', nacimiento: 1904, muerte: 1989, nacionalidad: 'española', genero: 'masculino'})
+CREATE (frida:Pintor {nombre: 'Frida Kahlo', nacimiento: 1907, muerte: 1954, nacionalidad: 'mexicana', genero: 'femenino'})
+CREATE (okeeffe:Pintor {nombre: "Georgia O'Keeffe", nacimiento: 1887, muerte: 1986, nacionalidad: 'estadounidense', genero: 'femenino'})
+
+// Cuadros
+
+CREATE (nocheEstrellada:Cuadro {nombre: 'Noche Estrellada', año: 1889})
+CREATE (girasoles:Cuadro {nombre: 'Girasoles', año: 1888})
+CREATE (guernica:Cuadro {nombre: 'Guernica', año: 1937})
+CREATE (demoiselles:Cuadro {nombre: "Les Demoiselles d''Avignon", año: 1907})
+CREATE (monaLisa:Cuadro {nombre: 'La Mona Lisa', año: 'Principios del siglo XVI'})
+CREATE (ultimaCena:Cuadro {nombre: 'La Última Cena', año: 'Entre 1495 y 1498'})
+CREATE (creacionAdan:Cuadro {nombre: 'La Creación de Adán', año: 'C. 1512'})
+CREATE (juicioFinal:Cuadro {nombre: 'El Juicio Final', año: '1536-1541'})
+CREATE (meninas:Cuadro {nombre: 'Las Meninas', año: 1656})
+CREATE (rendicionBreda:Cuadro {nombre: 'La Rendición de Breda (Las Lanzas)', año: 'C. 1634-1635'})
+CREATE (persistenciaMemoria:Cuadro {nombre: 'La Persistencia de la Memoria', año: 1931})
+CREATE (tentacionSanAntonio:Cuadro {nombre: 'La Tentación de San Antonio', año: 1946})
+CREATE (dosFridas:Cuadro {nombre: 'Las Dos Fridas', año: 1939})
+CREATE (autorretratoFrida:Cuadro {nombre: 'Autorretrato con collar de espinas y colibrí', año: 1940})
+CREATE (jimsonWeed:Cuadro {nombre: 'Jimson Weed/White Flower No. 1', año: 1932})
+CREATE (orientalPoppies:Cuadro {nombre: 'Oriental Poppies', año: 1928})
+
+
+// Técnicas
+
+CREATE (oleoLienzo:Tecnica {nombre: 'Óleo sobre lienzo'})
+CREATE (fresco:Tecnica {nombre: 'Fresco'})
+CREATE (oleoMadera:Tecnica {nombre: 'Óleo sobre madera'})
+CREATE (mural:Tecnica {nombre: 'Pintura mural'})
+
+
+// Museos
+
+CREATE (moma:Museo {nombre: 'Museo de Arte Moderno (MoMA)', ciudad: 'Nueva York'})
+CREATE (galeriaNacional:Museo {nombre: 'Galería Nacional', ciudad: 'Londres'})
+CREATE (reinaSofia:Museo {nombre: 'Museo Nacional Centro de Arte Reina Sofía', ciudad: 'Madrid'})
+CREATE (louvre:Museo {nombre: 'Museo del Louvre', ciudad: 'París'})
+CREATE (santaMariaGrazie:Museo {nombre: 'Convento de Santa Maria delle Grazie', ciudad: 'Milán'})
+CREATE (sixtina:Museo {nombre: 'Capilla Sixtina', ciudad: 'Ciudad del Vaticano'})
+CREATE (prado:Museo {nombre: 'Museo del Prado', ciudad: 'Madrid'})
+CREATE (daliMuseum:Museo {nombre: 'Salvador Dalí Museum', ciudad: 'St. Petersburg, Florida'})
+CREATE (fridaKahloMuseum:Museo {nombre: 'Museo Frida Kahlo', ciudad: 'Ciudad de México'})
+CREATE (crystalBridges:Museo {nombre: 'Crystal Bridges Museum of American Art', ciudad: 'Bentonville, Arkansas'})
+CREATE (indianapolisArt:Museo {nombre: 'Indianapolis Museum of Art', ciudad: 'Indianápolis, Indiana'})
+
+
+
+// Relaciones Expuesto en Museo
+
+CREATE (nocheEstrellada)-[:EXPUESTO_EN]->(moma)
+CREATE (girasoles)-[:EXPUESTO_EN]->(galeriaNacional)
+CREATE (guernica)-[:EXPUESTO_EN]->(reinaSofia)
+CREATE (demoiselles)-[:EXPUESTO_EN]->(moma)
+CREATE (monaLisa)-[:EXPUESTO_EN]->(louvre)
+CREATE (ultimaCena)-[:EXPUESTO_EN]->(santaMariaGrazie)
+CREATE (creacionAdan)-[:EXPUESTO_EN]->(sixtina)
+CREATE (juicioFinal)-[:EXPUESTO_EN]->(sixtina)
+CREATE (meninas)-[:EXPUESTO_EN]->(prado)
+CREATE (rendicionBreda)-[:EXPUESTO_EN]->(prado)
+CREATE (persistenciaMemoria)-[:EXPUESTO_EN]->(moma)
+CREATE (tentacionSanAntonio)-[:EXPUESTO_EN]->(daliMuseum)
+CREATE (dosFridas)-[:EXPUESTO_EN]->(moma)
+CREATE (autorretratoFrida)-[:EXPUESTO_EN]->(fridaKahloMuseum)
+CREATE (jimsonWeed)-[:EXPUESTO_EN]->(crystalBridges)
+CREATE (orientalPoppies)-[:EXPUESTO_EN]->(indianapolisArt)
+
+
+// Relaciones Pintado con Técnica
+
+CREATE (nocheEstrellada)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (girasoles)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (guernica)-[:PINTADO_CON]->(mural)
+CREATE (demoiselles)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (monaLisa)-[:PINTADO_CON]->(oleoMadera)
+CREATE (ultimaCena)-[:PINTADO_CON]->(fresco)
+CREATE (creacionAdan)-[:PINTADO_CON]->(fresco)
+CREATE (juicioFinal)-[:PINTADO_CON]->(fresco)
+CREATE (meninas)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (rendicionBreda)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (persistenciaMemoria)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (tentacionSanAntonio)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (dosFridas)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (autorretratoFrida)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (jimsonWeed)-[:PINTADO_CON]->(oleoLienzo)
+CREATE (orientalPoppies)-[:PINTADO_CON]->(oleoLienzo)
+
+
+// Relaciones Pintó
+
+CREATE (vanGogh)-[:PINTÓ]->(nocheEstrellada)
+CREATE (vanGogh)-[:PINTÓ]->(girasoles)
+CREATE (picasso)-[:PINTÓ]->(guernica)
+CREATE (picasso)-[:PINTÓ]->(demoiselles)
+CREATE (daVinci)-[:PINTÓ]->(monaLisa)
+CREATE (daVinci)-[:PINTÓ]->(ultimaCena)
+CREATE (michelangelo)-[:PINTÓ]->(creacionAdan)
+CREATE (michelangelo)-[:PINTÓ]->(juicioFinal)
+CREATE (velazquez)-[:PINTÓ]->(meninas)
+CREATE (velazquez)-[:PINTÓ]->(rendicionBreda)
+CREATE (dali)-[:PINTÓ]->(persistenciaMemoria)
+CREATE (dali)-[:PINTÓ]->(tentacionSanAntonio)
+CREATE (frida)-[:PINTÓ]->(dosFridas)
+CREATE (frida)-[:PINTÓ]->(autorretratoFrida)
+CREATE (okeeffe)-[:PINTÓ]->(jimsonWeed)
+CREATE (okeeffe)-[:PINTÓ]->(orientalPoppies)
+
+
+// Relaciones Influencia a
+
+CREATE (vanGogh)-[:INFLUENCIA_A]->(picasso)
+CREATE (michelangelo)-[:INFLUENCIA_A]->(daVinci)
+CREATE (picasso)-[:INFLUENCIA_A]->(dali)
+CREATE (velazquez)-[:INFLUENCIA_A]->(dali)
+CREATE (picasso)-[:INFLUENCIA_A]->(frida)
+CREATE (frida)-[:INFLUENCIA_A]->(okeeffe)
